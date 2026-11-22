@@ -168,8 +168,8 @@ footer{color:var(--faint);font-size:.66rem;text-align:center;padding:20px 0;font
 .flash{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ok);color:#fff;padding:9px 18px;border-radius:30px;font-family:var(--mono);font-weight:700;font-size:.78rem;z-index:200;opacity:0;transition:opacity .3s;pointer-events:none}
 .flash.show{opacity:1}
 
-/* ====== MÓVIL (≤480px) ====== */
-@media (max-width:480px){
+/* ====== MÓVIL (≤600px) ====== */
+@media (max-width:600px){
   .brand{font-size:.82rem}
   .brand small{font-size:.6rem}
   .tab{padding:7px 13px;font-size:.68rem}
@@ -480,7 +480,7 @@ function renderGantt(){
   if(!rows.length){body.innerHTML='<div class="empty" style="min-width:auto">Sin tareas con fechas. Pon inicio y fin a una tarea en Avance.</div>';return;}
   rows.sort((a,b)=>a.ini.localeCompare(b.ini));
   const DAY=86400000;
-  const LW=window.innerWidth<=480?130:220; // ancho columna etiquetas
+  const LW=window.innerWidth<=600?130:220; // ancho columna etiquetas
   let start=new Date(rows[0].ini+"T12:00");
   rows.forEach(r=>{const i=new Date(r.ini+"T12:00");if(i<start)start=i;});
   start=new Date(start.getFullYear(),start.getMonth(),start.getDate(),12);
